@@ -1,0 +1,19 @@
+{
+  "folders": [
+	{
+		"path": "../../Latihan Basic CSS"
+	},
+	{
+		"path": "../../Latihan Basic HTML"
+	},
+	{
+		"path": "../../Layouting CSS"
+	},
+	{
+		"path": ".."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Latihan Javascript"
+  }
+}

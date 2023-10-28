@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; 
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(90, 90, 90);
+}
+.content form {
+    background-color: gray;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
+/* input buttons */
+.content form input{
+    width: 50px;
+    font-size: 20px;
+    margin: 1px;
+    padding: 10px;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(43, 43, 43);
+}
+.content form input:hover{
+    background-color:rgb(89, 89, 89) ;
+}
+.content form input:active{
+    background-color: rgb(43, 43, 43);
+}
+
+
+/* aritmatika buttons */
+.content form .aritmatika{
+    margin: 10px 0;
+}
+
+
+
+/* display number buttions */
+.content form .display-value{
+    margin: 10px 0;
+    display: flex;
+    justify-content: center ;
+}
+.content form .display-value input{
+    text-align: right;
+    cursor: text;
+    width: 220px;
+    font-size: 25px;
+}
+.content form .display-value input:hover{
+    background-color: rgb(43, 43, 43);
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node List</title>
+</head>
+<body>
+    <h1>Belajar Node List</h1>
+
+    <ul id="menu">
+        <li id="first">Satu</li>
+        <li id="second">Dua</li>
+        <li id="third">Tiga</li>
+    </ul>
+
+    <ul id="menu2">
+        <li id="pertama">One</li>
+        <li id="kedua">Two</li>
+        <li id="ketiga">Three</li>
+    </ul>
+
+
+
+
+    <script>
+
+        const allist = document.querySelectorAll("li"); //S mengambil semua tag li, jadi tanpa perlu memanggil semua Id nya.
+        console.info(allist);
+
+        const liMenu2 = document.getElementById("menu2").childNodes;
+        console.info(liMenu2)
+
+    </script>
+</body>
+</html>

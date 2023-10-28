@@ -1,0 +1,12 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    opacity: 0; /* Mulai dengan elemen transparan */
+    transition: opacity 2s ease-in-out; /* Atur efek transisi */
+  }
+  
+  .box.visible {
+    opacity: 1; /* Atur elemen menjadi terlihat */
+  }
+  

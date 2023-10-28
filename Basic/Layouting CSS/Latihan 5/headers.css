@@ -1,0 +1,38 @@
+body {
+  background-color: rgb(29, 28, 28);
+}
+
+.navbar-brand {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 15px;
+  margin-left: 15px;
+}
+
+.navbar {
+  box-shadow: 0px 5px 5px rgb(14, 13, 13);
+}
+
+.navbar-nav button {
+  color: rgb(255, 255, 255);
+  background-color: rgb(29, 28, 28);
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  margin: 3px;
+}
+
+.navbar-nav button:hover {
+  background-color: rgb(71, 71, 71);
+}
+
+.navbar-nav {
+  margin-left: 5%;
+}
+.navbar-nav-button {
+  margin-left: 30px;
+}
+
+.its-me {
+  margin: 5%, 5%, 5%, 5%;
+}

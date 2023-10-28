@@ -1,0 +1,33 @@
+/*Style default pada sebuah link*/
+.testygy:link { color: red; }
+
+/*Aktif saat kursor diarahkan*/
+.testygy:hover {
+	font-size: 35px;
+	color: lightblue ;
+}
+
+/*aktif ketika di klik*/
+.testygy:active {
+	font-size: 45;
+	color: red;
+	font-family: arial;
+}
+
+/*aktif ketika sudah pernah mengunjungi link*/
+.testygy:visited {
+	color: grey;
+}
+
+
+
+/*Memilih elemen pertama dari sebuah parent*/
+
+li:nth-child(3) a {
+	color: black;
+	font-family: arial;
+}
+
+/* untuk elemen yang tidak beranak */
+p:first-of-type { color: red; }
+p:last-of-type { color: yellow; }

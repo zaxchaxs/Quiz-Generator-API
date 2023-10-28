@@ -1,0 +1,21 @@
+body { background: gray; }
+
+h1, h2 {
+	color: darkred;
+}
+
+ul li a {
+	color: yellow ;
+	text-decoration: none ;
+}
+ol li a {
+	color: lightblue;
+	text-decoration: none;
+}
+/*Menggunakan id(#) dan class(.)*/
+#parag1 { color: red; }
+.p1 { color: white; }
+.wkwk { font-style: italic; }
+
+/*contoh dibawah seperti (Tolong ubah style paragraf yg ada class wkwk nya*/
+p.wkwk { font-size: 20px; }

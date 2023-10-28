@@ -1,0 +1,10 @@
+body{
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+}
+
+.color{
+
+    padding: 20%;
+}

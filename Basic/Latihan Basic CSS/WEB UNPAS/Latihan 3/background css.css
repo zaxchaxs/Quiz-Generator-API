@@ -1,0 +1,16 @@
+body {
+	background-color: lightblue;
+	background-image: url(image/bg5.jpg);
+	background-position: right;
+}
+h1 {
+	color: red;
+	text-align: center;
+	font-size: 50px;
+	text-shadow: 2px 2px gray;
+	font-variant: small-caps;
+}
+
+
+/*Atau bisa memakai shorthand*/
+body { background: lightblue url(image/bg5.jpg) right; }
