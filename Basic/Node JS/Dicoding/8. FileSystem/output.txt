@@ -1,0 +1,18 @@
+[
+    {
+        "nama": "Irzi Rahmatullah",
+        "email": "irzi@gmail.com"
+    },
+    {
+        "nama": "caca marsha",
+        "email": "marsha@gmail.com"
+    },
+    {
+        "nama": "Marsha aprilia",
+        "email": "caca@gmail.com"
+    },
+    {
+        "nama": "Lewis Hamilton",
+        "email": "hamilton@gmail.com"
+    }
+]
