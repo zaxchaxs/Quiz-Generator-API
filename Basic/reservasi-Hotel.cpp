@@ -3,6 +3,7 @@
 #include <queue>
 #include <cstdlib>
 #include <ctime>
+
 using namespace std;
 
 struct Pengunjung {
@@ -301,4 +302,4 @@ int main() {
     }
 
     return 0;
-}
+};
