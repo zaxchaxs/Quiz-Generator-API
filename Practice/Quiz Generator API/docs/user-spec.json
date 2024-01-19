@@ -1,0 +1,326 @@
+{
+    "openapi":"3.0.2",
+    "info": {
+      "title":"User API Spec",
+      "version":"1.0",
+      "description": "User API Spec - Register, Login, Logout"
+    },
+    "servers": [
+      {"url":"https://api.server.test/v1"}
+    ],
+    "paths": {
+        "/quizeez/users/register": {
+            "summary": "User Login Path",
+            "description": "User login path",
+            "post": {
+                "summary": "Register User API",
+                "requestBody": {
+                    "required": true,
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                 "type": "object",
+                                 "properties": {
+                                    "username": {
+                                        "type": "string",
+                                        "minLength": 4
+                                    },
+                                    "password" :{
+                                        "type": "string",
+                                        "minLength": 6
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "minLength": 4
+                                    }
+                                 }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200" : {
+                        "description": "Success to register",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "message": "Success to register"
+                                }
+                            }
+                        }
+                    },
+                    "400" : {
+                        "description": "Failed to register",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "errors": "Username has been registered"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        },
+        "/quizeez/users/login": {
+          "post": {
+            "summary": "Login User API",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "username": {
+                                    "type": "string",
+                                    "minLength": 4
+                                },
+                                "password" :{
+                                    "type": "string",
+                                    "minLength": 6
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Success to login",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                   "token" : {
+                                    "type": "string"
+                                   }
+                                }
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Fail to login",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "errors": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "example": {
+                                "errors": "Username or password wrong"
+                            }
+                        }
+                    }
+                }
+            }
+          }  
+        },
+        "/quizeez/users/user": {
+            "get": {
+                "security": [
+                    {
+                        "tokenAuth": []
+                    }
+                ],
+                "summary": "Get Current User API",
+                "responses": {
+                    "200": {
+                        "description": "Success to get user",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "username": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Fail to get user",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "errors": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "errors": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "security": [
+                    {
+                        "tokenAuth": []
+                    }
+                ],
+                "summary": "Update User API",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                             "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                }
+                             },
+                             "example": {
+                                "username": "UpdatedUsername",
+                                "password": "UpdatedPassword"
+                             }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success updated user",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "password": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "name": "UpdatedName",
+                                    "password": "UpdatedPassword"
+                                 }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Fail to update user",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "errors": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Unauthorized": {
+                                        "description": "Unauthorized example error",
+                                        "value": {
+                                            "errors": "Unauthorized"
+                                        }
+                                    },
+                                    "Bad Request": {
+                                        "description": "Bad Request example errors",
+                                        "value": {
+                                            "errors": "Name Length max 100"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/quizeez/users/logout": {
+            "delete": {
+                "description": "Logout User API",
+                "responses": {
+                    "200": {
+                        "description": "Success to logout",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "message": "OK"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Failed to logout",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "erros": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "errors": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "tokenAuth": {
+                "type": "http",
+                "scheme": "bearer"
+            }
+        }
+    }
+}

@@ -1,0 +1,3 @@
+Cara jalanin unit test yaitu :
+npx jest {nama file berformat .test.js}
+jangan lupa directorynya sesuai ya ziiii.
