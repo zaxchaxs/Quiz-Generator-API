@@ -1,0 +1,257 @@
+{
+    "openapi":"3.0.2",
+    "info": {
+      "title":"Quiz API Spec",
+      "version":"1.0",
+      "description": "Quiz API Spec - Geting all quiz and getting quiz by category"
+    },
+    "servers": [
+      {"url":"https://api.server.test/v1"}
+    ],
+    "paths": {
+        "/quizeez/questions": {
+            "get": {
+                "tags": ["All Questions"],
+                "security": [
+                    {
+                        "tokenAuth": []
+                    }
+                ],
+                "summary": "Get all random quiz",
+                "responses": {
+                    "200": {
+                        "description": "Success getting random quiz",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer"
+                                            },
+                                            "question": {
+                                                "type": "string"
+                                            },
+                                            "category": {
+                                                "type": "string"
+                                            },
+                                            "answers": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "answer-a": {
+                                                        "type": "string"
+                                                    },
+                                                    "answer-b": {
+                                                        "type": "string"
+                                                    },
+                                                    "answer-c": {
+                                                        "type": "string"
+                                                    },
+                                                    "answer-d": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "correctAnswers": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "correctAnswer-a": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "correctAnswer-b": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "correctAnswer-c": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "correctAnswer-d": {
+                                                        "type": "boolean"
+                                                    }
+                                                }
+                                            },
+                                            "explanation": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "error": "Unauthenticated"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Questions not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "error": "No questions found"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/quizeez/questions/{category}": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/categories"
+                    }
+                ],
+                "tags": ["Questions by Category"],
+                "summary": "Get random quiz by category",
+                "security": [
+                    {
+                        "tokenAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success getting random quiz by category",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer"
+                                            },
+                                            "question": {
+                                                "type": "string"
+                                            },
+                                            "category": {
+                                                "type": "string"
+                                            },
+                                            "answers": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "answer-a": {
+                                                        "type": "string"
+                                                    },
+                                                    "answer-b": {
+                                                        "type": "string"
+                                                    },
+                                                    "answer-c": {
+                                                        "type": "string"
+                                                    },
+                                                    "answer-d": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "correctAnswers": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "correctAnswer-a": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "correctAnswer-b": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "correctAnswer-c": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "correctAnswer-d": {
+                                                        "type": "boolean"
+                                                    }
+                                                }
+                                            },
+                                            "explanation": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "error": "Unauthenticated"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Questions not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "error": "No questions found"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "tokenAuth": {
+                "type": "http",
+                "scheme": "bearer"
+            }
+        },
+        "parameters": {
+            "categories": {
+                "in": "path",
+                "name": "category",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Matematika"
+            }
+        }
+    }
+}

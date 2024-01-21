@@ -167,7 +167,7 @@
                             }
                         }
                     },
-                    "400": {
+                    "401": {
                         "description": "Fail to get user",
                         "content": {
                             "application/json": {
@@ -239,7 +239,7 @@
                             }
                         }
                     },
-                    "400": {
+                    "401": {
                         "description": "Fail to update user",
                         "content": {
                             "application/json": {
