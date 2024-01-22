@@ -273,7 +273,7 @@
         },
         "/quizeez/users/logout": {
             "delete": {
-                "description": "Logout User API",
+                "summary": "Logout User API",
                 "responses": {
                     "200": {
                         "description": "Success to logout",
