@@ -8,6 +8,3 @@ export const app = express();
 app.use(express.json());
 app.use(userRoute);
 app.use(errorMiddleware);
-
-// app.route('/quizeez/users/register')
-//     .post(registerUser)

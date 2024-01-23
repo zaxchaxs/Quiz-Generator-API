@@ -224,17 +224,17 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "name": {
+                                        "username": {
                                             "type": "string"
                                         },
-                                        "password": {
+                                        "name": {
                                             "type": "string"
                                         }
                                     }
                                 },
                                 "example": {
-                                    "name": "UpdatedName",
-                                    "password": "UpdatedPassword"
+                                    "username": "username",
+                                    "name": "UpdatedName"
                                  }
                             }
                         }
