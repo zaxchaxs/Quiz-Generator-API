@@ -34,7 +34,7 @@
                                             "question": {
                                                 "type": "string"
                                             },
-                                            "category": {
+                                            "description": {
                                                 "type": "string"
                                             },
                                             "answers": {
@@ -54,6 +54,9 @@
                                                     }
                                                 }
                                             },
+                                            "multiple_correct_answer": {
+                                                "type": "boolean"
+                                            },
                                             "correctAnswers": {
                                                 "type": "object",
                                                 "properties": {
@@ -72,6 +75,15 @@
                                                 }
                                             },
                                             "explanation": {
+                                                "type": "string"
+                                            },
+                                            "tags" : {
+                                                "type": "array"
+                                            },
+                                            "category": {
+                                                "type": "string"
+                                            },
+                                            "difficult": {
                                                 "type": "string"
                                             }
                                         }
@@ -149,7 +161,7 @@
                                             "question": {
                                                 "type": "string"
                                             },
-                                            "category": {
+                                            "description": {
                                                 "type": "string"
                                             },
                                             "answers": {
@@ -169,6 +181,9 @@
                                                     }
                                                 }
                                             },
+                                            "multiple_correct_answer": {
+                                                "type": "boolean"
+                                            },
                                             "correctAnswers": {
                                                 "type": "object",
                                                 "properties": {
@@ -187,6 +202,15 @@
                                                 }
                                             },
                                             "explanation": {
+                                                "type": "string"
+                                            },
+                                            "tags" : {
+                                                "type": "array"
+                                            },
+                                            "category": {
+                                                "type": "string"
+                                            },
+                                            "difficult": {
                                                 "type": "string"
                                             }
                                         }

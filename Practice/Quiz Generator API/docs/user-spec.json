@@ -272,7 +272,7 @@
             }
         },
         "/quizeez/users/logout": {
-            "delete": {
+            "patch": {
                 "summary": "Logout User API",
                 "responses": {
                     "200": {

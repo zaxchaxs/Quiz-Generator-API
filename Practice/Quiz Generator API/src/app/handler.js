@@ -1,5 +1,5 @@
 import { ResponseError } from "../error/responseError.js";
-import { registerUserValidation, updateUserValidation } from "../validation/validation";
+import { registerUserValidation, updateUserValidation } from "../validation/validation.js";
 import { prismaClient } from './prisma-client.js';
 import bcrypt from 'bcrypt';
 import {v4 as uuid} from 'uuid';
